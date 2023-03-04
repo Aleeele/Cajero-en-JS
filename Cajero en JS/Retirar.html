@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form">
+        <input class="btn" type="button" onclick="cajero.retirar()" value="Retirar dinero de la cuenta">
+	        <br>
+    </form>
+    <div id="recuadro"></div>
+    <script>
+        var cajero=new Object;
+    var resultado=document.getElementById("recuadro");
+        cajero.retirar=function(retirar){
+	var devengo=prompt("¿Cuanto dinero quieres retirar?");
+  if (cajero.saldo<devengo){
+   alert("Lo siento no tienes suficiente saldo.")
+   return false;
+  } else {
+  	alert("Recoja su dinero, buen día.")
+  	cajero.movimientos.push("-" + devengo);
+    return cajero.saldo=cajero.saldo-parseInt(devengo); }
+
+}
+    </script>
+</body>
+</html>
